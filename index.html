@@ -34,7 +34,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* ---------- barra superior ---------- */
 .top{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(13,14,18,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid var(--line-d)}
 .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
-.top img{height:22px;width:auto}
+.top img{height:40px;width:auto}
 .top .who{font-family:var(--head);font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
 .top .who span{color:var(--yellow)}
 .odo{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
@@ -45,7 +45,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
 /* ---------- portada ---------- */
 .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--petrol)}
-.hero video,.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
 .hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;z-index:3;background:linear-gradient(90deg,var(--coral) 0 50%,var(--yellow) 50% 75%,var(--teal) 75%)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,14,18,.35) 0%,rgba(13,14,18,.2) 40%,rgba(13,14,18,.96) 100%)}
 .hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:56px;color:#fff;width:100%}
@@ -317,7 +317,7 @@ select.sel{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border-r
 
 footer{background:var(--petrol);color:var(--muted-d);padding:40px 0;font-size:13px}
 footer .wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-footer img{height:26px;width:auto}
+footer img{height:64px;width:auto}
 footer a{color:#fff}
 
 /* aparición */
@@ -357,7 +357,7 @@ footer a{color:#fff}
 
 <header class="top">
   <div class="wrap">
-    <img src="media/web/logo-blanco.svg" alt="Pro Motion Sport Marketing">
+    <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing">
     <div class="who">Diego Serrano <span>·</span> Instagram 2026</div>
     <nav class="odo" id="odo">
       <a href="#tc1">TC1 Resumen</a><a href="#tc2">TC2 Temporada</a><a href="#tc3">TC3 Números</a><a href="#tc4">TC4 Momentos</a><a href="#tc5">TC5 Contenido</a><a href="#tc6">TC6 Marcas</a><a href="#tc7">TC7 Eco</a><a href="#tc8">TC8 Audiencia</a><a href="#tc9">TC9 Trabajo</a><a href="#final">Final Ambato</a>
@@ -368,8 +368,7 @@ footer a{color:#fff}
 
 <!-- PORTADA -->
 <section class="hero" id="salida">
-  <img class="bg" src="media/web/portada-diego.webp" alt="">
-  <video autoplay muted loop playsinline preload="metadata" poster="media/web/franja-diego.webp"><source src="media/web/franja-diego.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline preload="metadata" poster="media/web/franja-diego.webp"><source src="media/web/franja-diego.mp4" type="video/mp4"></video>
   <div class="wrap">
     <span class="plate">Hoja de ruta · 1 feb → 21 oct 2026 · @diegoeserrano</span>
     <h1>Diego<em>Serrano</em></h1>
@@ -586,7 +585,7 @@ footer a{color:#fff}
 
 <footer>
   <div class="wrap">
-    <img src="media/web/logo-blanco.svg" alt="Pro Motion Sport Marketing">
+    <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing">
     <div>Datos: Metricool (1 feb–21 oct 2026) · análisis visual con Gemini · publicaciones públicas de Instagram.<br>Elaborado por Pro Motion Sport Marketing · <a href="https://www.instagram.com/pro_motion.ec/" target="_blank" rel="noopener">@pro_motion.ec</a> · Octubre 2026</div>
   </div>
 </footer>
