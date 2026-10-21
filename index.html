@@ -383,6 +383,28 @@ footer a{color:#fff}
   .top img.deslogo,.top .x{display:none}
   .raceday .big-word{font-size:120px;top:2%}
 }
+
+/* Calculadora de visibilidad */
+.calc-sec{background:var(--paper);border-top:6px solid var(--yellow)}
+.calc{display:grid;gap:20px;align-items:start}
+@media(min-width:900px){.calc{grid-template-columns:1fr 1fr}}
+.cf{margin-bottom:20px}
+.cf label,.cf .lbl{display:flex;justify-content:space-between;font-family:var(--head);font-size:22px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.cf output{font-family:var(--mono);color:var(--coral)}
+.cf input[type=range]{width:100%;accent-color:var(--coral);height:28px}
+.cnivel{display:grid;gap:8px}
+.cnivel button{text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--sand);cursor:pointer;font:inherit;transition:.2s}
+.cnivel button b{display:block;font-size:15px}.cnivel button small{color:var(--muted);font-size:13px}
+.cnivel button.on{background:var(--ink);color:#fff;border-color:var(--ink)}.cnivel button.on small{color:var(--muted-d)}
+.cbase{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.calc-out{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.co{background:var(--petrol);color:#fff;border-radius:10px;padding:18px}
+.co span{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-d)}
+.co b{display:block;font-family:var(--head);font-size:clamp(34px,4vw,52px);line-height:1;margin-top:8px}
+.co small{display:block;font-size:12px;color:var(--muted-d);margin-top:6px}
+.co.big{grid-column:1/-1;background:var(--coral)}.co.big span,.co.big small{color:rgba(255,255,255,.85)}.co.big b{font-size:clamp(46px,6vw,76px)}
+.co.hot{grid-column:1/-1;background:var(--yellow);color:var(--ink)}.co.hot span,.co.hot small{color:rgba(17,18,21,.7)}
+.cnota{font-size:13px;color:var(--muted);max-width:900px;margin-top:22px}
 </style>
 </head>
 <body>
@@ -392,7 +414,7 @@ footer a{color:#fff}
     <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing"><span class="x">×</span><img class="deslogo" src="media/brand/des-blanco.svg" alt="DES · Diego Serrano">
     <div class="who">Diego Serrano <span>·</span> Instagram 2026</div>
     <nav class="odo" id="odo">
-      <a href="#tc1">TC1 Resumen</a><a href="#tc2">TC2 Temporada</a><a href="#tc3">TC3 Números</a><a href="#tc4">TC4 Momentos</a><a href="#tc5">TC5 Contenido</a><a href="#tc6">TC6 Marcas</a><a href="#tc7">TC7 Eco</a><a href="#tc8">TC8 Audiencia</a><a href="#tc9">TC9 Trabajo</a><a href="#final">Final Ambato</a>
+      <a href="#tc1">TC1 Resumen</a><a href="#tc2">TC2 Temporada</a><a href="#tc3">TC3 Números</a><a href="#tc4">TC4 Momentos</a><a href="#tc5">TC5 Contenido</a><a href="#tc6">TC6 Marcas</a><a href="#calc">Calculadora</a><a href="#tc7">TC7 Eco</a><a href="#tc8">TC8 Audiencia</a><a href="#tc9">TC9 Trabajo</a><a href="#final">Final Ambato</a>
     </nav>
   </div>
   <div class="prog" id="prog"></div>
@@ -549,6 +571,35 @@ footer a{color:#fff}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CALCULADORA DE VISIBILIDAD -->
+<section id="calc" class="calc-sec">
+  <div class="wrap">
+    <div class="tc rv"><i>TC 06+</i> Calculadora de visibilidad</div>
+    <h2 class="rv">¿Cuánto te vería la afición <em>si apareces en sus piezas</em>?</h2>
+    <p class="intro rv">Una estimación 100% orgánica para una marca auspiciante, construida con el rendimiento real de la cuenta de Diego entre febrero y octubre de 2026 (Metricool). Elige cuántas piezas y cómo aparece la marca.</p>
+    <div class="calc">
+      <div class="card calc-in rv">
+        <div class="cf"><label for="c-reels">Reels <output id="o-reels">5</output></label><input type="range" id="c-reels" min="0" max="20" value="5"></div>
+        <div class="cf"><label for="c-car">Carruseles <output id="o-car">5</output></label><input type="range" id="c-car" min="0" max="20" value="5"></div>
+        <div class="cf"><span class="lbl">¿Cómo aparece la marca?</span>
+          <div class="cnivel" id="c-nivel">
+            <button type="button" data-f="0.35"><b>Logo a la vista</b><small>Auto, traje, carpa</small></button>
+            <button type="button" data-f="0.6" class="on"><b>Mencionada y etiquetada</b><small>En el texto y en el relato</small></button>
+            <button type="button" data-f="1"><b>Protagonista</b><small>La marca mueve la historia</small></button>
+          </div></div>
+        <p class="cbase" id="c-base"></p>
+      </div>
+      <div class="calc-out rv">
+        <div class="co big"><span>Visualizaciones orgánicas estimadas</span><b id="r-views">—</b><small id="r-range"></small></div>
+        <div class="co"><span>Cuentas alcanzadas (suma por pieza)</span><b id="r-reach">—</b></div>
+        <div class="co"><span>Interacciones estimadas</span><b id="r-int">—</b></div>
+        <div class="co hot"><span>Exposición efectiva de la marca</span><b id="r-exp">—</b><small id="r-expn"></small></div>
+      </div>
+    </div>
+    <p class="cnota rv">Cómo se calcula: para cada formato usamos el rango entre la mediana y el promedio real de la cuenta (visualizaciones, alcance e interacciones). La exposición efectiva pondera las visualizaciones según la profundidad de integración que medimos en cada pieza (logo 35%, mención 60%, protagonista 100%). No incluye pauta, historias ni las publicaciones de terceros donde también aparece Diego. Es una referencia para planificar, no una garantía de resultados.</p>
   </div>
 </section>
 
@@ -902,6 +953,29 @@ addEventListener('scroll',()=>{const y=scrollY+120;let cur=-1;secs.forEach((s,i)
   $$('#odo a').forEach((a,i)=>a.classList.toggle('on',i===cur));
   const on=$('#odo a.on');if(on){const o=$('#odo');const l=on.offsetLeft-o.clientWidth/2+on.clientWidth/2;if(Math.abs(o.scrollLeft-l)>40)o.scrollTo({left:l,behavior:'smooth'})}
   $('#prog').style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+
+/* ===== Calculadora de visibilidad ===== */
+(function(){
+  const med=a=>{const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2};
+  const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const st=t=>{const q=P.filter(p=>p.type===t);return{n:q.length,v:[med(q.map(p=>p.views)),avg(q.map(p=>p.views))],r:[med(q.map(p=>p.reach)),avg(q.map(p=>p.reach))],i:[med(q.map(p=>p.inter)),avg(q.map(p=>p.inter))]}};
+  const R=st('Reel'),C=st('Carrusel');
+  const ir=document.getElementById('c-reels'),ic=document.getElementById('c-car');let f=0.6;
+  document.getElementById('c-base').textContent=`Base: ${R.n} reels (mediana ${fmt(R.v[0])} / promedio ${fmt(R.v[1])} visualizaciones) y ${C.n} carruseles (mediana ${fmt(C.v[0])} / promedio ${fmt(C.v[1])}).`;
+  function calc(){
+    const r=+ir.value,c=+ic.value;document.getElementById('o-reels').textContent=r;document.getElementById('o-car').textContent=c;
+    const lo=k=>r*R[k][0]+c*C[k][0],hi=k=>r*R[k][1]+c*C[k][1];
+    document.getElementById('r-views').textContent=fmt((lo('v')+hi('v'))/2);
+    document.getElementById('r-range').textContent=`Rango: ${fmt(lo('v'))} – ${fmt(hi('v'))}`;
+    document.getElementById('r-reach').textContent=fmt((lo('r')+hi('r'))/2);
+    document.getElementById('r-int').textContent=fmt((lo('i')+hi('i'))/2);
+    document.getElementById('r-exp').textContent=fmt((lo('v')+hi('v'))/2*f);
+    document.getElementById('r-expn').textContent=`Visualizaciones ponderadas por integración (${Math.round(f*100)}%) en ${r+c} piezas.`;
+  }
+  ir.oninput=calc;ic.oninput=calc;
+  document.querySelectorAll('#c-nivel button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#c-nivel button').forEach(x=>x.classList.toggle('on',x===b));f=+b.dataset.f;calc()});
+  calc();
+})();
 </script>
 </body>
 </html>
