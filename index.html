@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diego Serrano · Instagram 2026</title>
 <meta name="description" content="Informe de Instagram de @diegoeserrano, febrero a octubre de 2026. Pro Motion Sport Marketing.">
-<link rel="icon" href="media/web/isotipo-blanco.svg">
+<link rel="icon" href="media/brand/des-rojo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -35,6 +35,30 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .top{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(13,14,18,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid var(--line-d)}
 .top .wrap{display:flex;align-items:center;gap:18px;height:56px}
 .top img{height:40px;width:auto}
+.top .x{color:var(--muted-d);font-family:var(--mono);font-size:13px}
+.top img.deslogo{height:22px}
+.hero-des{height:clamp(44px,6vw,72px);width:auto;margin-bottom:18px;display:block}
+/* separador Race Day */
+.raceday{position:relative;overflow:hidden;background:#07080a;color:#fff;padding:0}
+.raceday .bgv{position:absolute;inset:0;background:url('media/brand/fondo-volcan.jpg') center 35%/cover no-repeat;opacity:.55;filter:saturate(.7)}
+.raceday:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,8,10,.95) 0%,rgba(7,8,10,.7) 45%,rgba(7,8,10,.15) 75%),linear-gradient(0deg,#07080a 0%,transparent 35%)}
+.raceday .big-word{position:absolute;right:-2%;top:6%;z-index:1;font-family:var(--head);font-style:italic;font-weight:900;font-size:clamp(120px,22vw,330px);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(227,27,35,.55);text-transform:uppercase;text-align:right;pointer-events:none}
+.raceday .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:20px;min-height:min(92vh,860px);padding-top:80px}
+.raceday .txt{padding-bottom:70px}
+.raceday .txt .n{font-family:var(--head);font-style:italic;font-weight:900;font-size:clamp(110px,16vw,220px);line-height:.8;color:var(--yellow)}
+.raceday .txt h3{font-size:clamp(30px,4vw,52px);font-style:italic;margin:10px 0 16px;max-width:14ch}
+.raceday .txt p{color:#D9DADF;max-width:46ch;font-size:17px}
+.raceday .cut{align-self:end;justify-self:center;width:100%;max-width:560px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));transform:translateY(40px);opacity:0;transition:transform 1.1s cubic-bezier(.2,.8,.2,1),opacity 1.1s}
+.raceday.in .cut{transform:none;opacity:1}
+.sponsors{position:relative;z-index:2;border-top:1px solid var(--line-d);padding:26px 0 30px}
+.sponsors .wrap{display:block;min-height:0;padding-top:0}
+.sponsors span{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--muted-d);margin-bottom:14px}
+.sponsors img{width:100%;max-width:980px;height:auto;opacity:.92}
+.strip-dark{margin-top:34px;padding-top:24px;border-top:2px solid var(--petrol)}
+.strip-dark span{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;margin-bottom:12px}
+.strip-dark img{width:100%;max-width:900px;height:auto}
+.brandstrip{background:#07080a;border:1px solid var(--line-d);border-radius:10px;padding:22px 24px;margin-bottom:18px}
+.brandstrip img{width:100%;height:auto}
 .top .who{font-family:var(--head);font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
 .top .who span{color:var(--yellow)}
 .odo{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
@@ -318,6 +342,8 @@ select.sel{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border-r
 footer{background:var(--petrol);color:var(--muted-d);padding:40px 0;font-size:13px}
 footer .wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
 footer img{height:64px;width:auto}
+footer .logos{display:flex;align-items:center;gap:22px}
+footer img.des{height:34px}
 footer a{color:#fff}
 
 /* aparición */
@@ -334,6 +360,10 @@ footer a{color:#fff}
   .mbox{grid-template-columns:1fr}.mmedia{min-height:280px}.mmedia video,.mmedia img{max-height:58vh}
   .ecostats{grid-template-columns:1fr 1fr}
   .top .who{display:none}
+  .raceday .wrap{grid-template-columns:1fr;min-height:0}
+  .raceday .txt{padding-bottom:0}
+  .raceday .cut{max-width:420px}
+  .raceday:before{background:linear-gradient(0deg,rgba(7,8,10,.95) 10%,rgba(7,8,10,.55) 60%,rgba(7,8,10,.85) 100%)}
 }
 @media (max-width:600px){
   .wrap{padding:0 16px}
@@ -350,6 +380,8 @@ footer a{color:#fff}
   .take .card{flex-direction:column;gap:8px}
   .rank li{grid-template-columns:22px 44px 1fr auto;gap:8px}.rank img{width:44px;height:54px}
   .scrollcue{display:none}
+  .top img.deslogo,.top .x{display:none}
+  .raceday .big-word{font-size:120px;top:2%}
 }
 </style>
 </head>
@@ -357,7 +389,7 @@ footer a{color:#fff}
 
 <header class="top">
   <div class="wrap">
-    <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing">
+    <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing"><span class="x">×</span><img class="deslogo" src="media/brand/des-blanco.svg" alt="DES · Diego Serrano">
     <div class="who">Diego Serrano <span>·</span> Instagram 2026</div>
     <nav class="odo" id="odo">
       <a href="#tc1">TC1 Resumen</a><a href="#tc2">TC2 Temporada</a><a href="#tc3">TC3 Números</a><a href="#tc4">TC4 Momentos</a><a href="#tc5">TC5 Contenido</a><a href="#tc6">TC6 Marcas</a><a href="#tc7">TC7 Eco</a><a href="#tc8">TC8 Audiencia</a><a href="#tc9">TC9 Trabajo</a><a href="#final">Final Ambato</a>
@@ -370,6 +402,7 @@ footer a{color:#fff}
 <section class="hero" id="salida">
     <video autoplay muted loop playsinline preload="metadata" poster="media/web/franja-diego.webp"><source src="media/web/franja-diego.mp4" type="video/mp4"></video>
   <div class="wrap">
+    <img class="hero-des" src="media/brand/des-blanco.svg" alt="DES">
     <span class="plate">Hoja de ruta · 1 feb → 21 oct 2026 · @diegoeserrano</span>
     <h1>Diego<em>Serrano</em></h1>
     <p class="lead">Nueve meses de rally, circuitos y marcas contados en Instagram. Qué hicimos, qué funcionó y qué viene para la final del Nacional de Circuitos en Ambato.</p>
@@ -403,6 +436,22 @@ footer a{color:#fff}
       </div>
     </div>
   </div>
+</section>
+
+<!-- RACE DAY -->
+<section class="raceday" id="raceday">
+  <div class="bgv"></div>
+  <div class="big-word">Race<br>Day</div>
+  <div class="wrap">
+    <div class="txt">
+      <span class="plate">Rally Caminos de Imbabura · 29–30 may 2026</span>
+      <div class="n">4/4</div>
+      <h3>Victorias de categoría en el Nacional de Rally</h3>
+      <p>Ambato, Gualaceo, Imbabura y Chimborazo. La sonrisa del arte Race Day de Imbabura resume la temporada: un piloto que gana, disfruta y lleva a sus marcas en cada foto. Ese carrusel abrió la fecha con 7.665 reproducciones.</p>
+    </div>
+    <img class="cut" src="media/brand/diego-auto-recorte.webp" alt="Diego Serrano sonriendo junto a su Opel Corsa Rally4" loading="lazy">
+  </div>
+  <div class="sponsors"><div class="wrap"><span>Los que empujan al Team Serrano</span><img src="media/brand/auspiciantes-blanco.svg" alt="Factory Bike, Zhumir, Tedasa, Motul, Moto Republic, Auto Total, Finsok, Plaza Soleil, La Spritzería, Autos Juan Serrano, Mirasol Chevrolet" loading="lazy"></div></div>
 </section>
 
 <!-- TC2 TEMPORADA -->
@@ -487,6 +536,7 @@ footer a{color:#fff}
     <div class="tc rv"><i>TC 06</i> Marcas</div>
     <h2 class="rv">De logo en el auto a <em>parte de la historia</em></h2>
     <p class="intro rv muted">Cuántas piezas muestra cada auspiciante y con qué profundidad. Amarillo = la marca es parte del relato; azul = mencionada o etiquetada; gris = solo su logo a la vista. Toca una marca para ver sus piezas.</p>
+    <div class="brandstrip rv"><img src="media/brand/auspiciantes-blanco.svg" alt="Auspiciantes de Diego Serrano" loading="lazy"></div>
     <div class="brands">
       <div class="card rv" style="overflow-x:auto"><table class="bt" id="btab"></table></div>
       <div class="card rv">
@@ -580,12 +630,13 @@ footer a{color:#fff}
       <div><b>Lunes 26</b><h5>Premiar</h5><p>Anuncio de ganadores, repost de las mejores fotos de la afición y reel de cierre de temporada.</p></div>
     </div>
     <div class="rules rv"><b>Antes de lanzar</b><br>Bases de una página con fechas, premios, cantidad de ganadores y cómo se elige. Decir “participas”, nunca “te ganas”. Aclarar que Instagram no patrocina el concurso. Confirmar con Motul que la dinámica no choca con su promoción del GP de Brasil, vigente hasta el 31 de octubre.</div>
+    <div class="strip-dark rv"><span>Marcas que pueden sumarse a las activaciones en Ambato</span><img src="media/brand/auspiciantes-negro.svg" alt="Auspiciantes de Diego Serrano" loading="lazy"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing">
+    <div class="logos"><img src="media/web/logo-psm-blanco.svg" alt="Pro Motion Sport Marketing"><img class="des" src="media/brand/des-blanco.svg" alt="DES"></div>
     <div>Datos: Metricool (1 feb–21 oct 2026) · análisis visual con Gemini · publicaciones públicas de Instagram.<br>Elaborado por Pro Motion Sport Marketing · <a href="https://www.instagram.com/pro_motion.ec/" target="_blank" rel="noopener">@pro_motion.ec</a> · Octubre 2026</div>
   </div>
 </footer>
@@ -845,7 +896,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
   el.querySelectorAll('[data-off]').forEach(c=>c.style.strokeDashoffset=c.dataset.off);io.unobserve(el)}),{threshold:.15});
 function observe(){$$('.rv:not(.in)').forEach(el=>io.observe(el))}
 observe();
-['#vs','#ages'].forEach(s=>{const el=$(s);el.classList.add('rv');io.observe(el)});
+['#vs','#ages','#raceday'].forEach(s=>{const el=$(s);el.classList.add('rv');io.observe(el)});
 const secs=['tc1','tc2','tc3','tc4','tc5','tc6','tc7','tc8','tc9','final'].map(id=>document.getElementById(id));
 addEventListener('scroll',()=>{const y=scrollY+120;let cur=-1;secs.forEach((s,i)=>{if(s.offsetTop<=y)cur=i});
   $$('#odo a').forEach((a,i)=>a.classList.toggle('on',i===cur));
